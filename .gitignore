@@ -1,0 +1,27 @@
+# Local environment and secrets
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+
+# Generated results / large derived arrays
+**/outputs/
+**/*.log
+melissa/data/processed/
+
+# Archives and local scratch files
+*.zip
+*.tar.gz
+*.tgz
+*~

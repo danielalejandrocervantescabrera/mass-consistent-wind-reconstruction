@@ -1,0 +1,117 @@
+{
+  "scientific_scope": "kinematic consistency analysis of reconstructed w; not independent validation of atmospheric vertical velocity",
+  "model_seed": 2345,
+  "checkpoint": "final_model.pt",
+  "n_real_hourly_times": 61,
+  "observed_vertical_range_m": [
+    10.0,
+    290.0
+  ],
+  "bottom_boundary_m": 0.0,
+  "internal_kinematic_definition": "w_kin_model(z)=-int_0^z (du_theta/dxi+dv_theta/deta) dz",
+  "observation_kinematic_definition": "Delta w_kin_obs(z)=-int_zmin^z (dU_obs/dxi+dV_obs/deta) dz; compared with w_theta(z)-w_theta(zmin)",
+  "peak_intensity_time": {
+    "index": 46,
+    "key": "20251028T07",
+    "hours_from_start": 46.0,
+    "S_t_mps": 44.17360305786133
+  },
+  "statistics_over_real_hourly_times": {
+    "S_t_mps": {
+      "mean": 30.36196965076884,
+      "std": 5.833699418117302,
+      "min": 22.691085815429684,
+      "max": 44.17360305786133
+    },
+    "rms_wtheta_mps": {
+      "mean": 0.018357260485785884,
+      "std": 0.0028199438109556114,
+      "min": 0.014185262906922406,
+      "max": 0.02693117555831533
+    },
+    "maxabs_wtheta_mps": {
+      "mean": 0.13677979407251858,
+      "std": 0.04878086627749613,
+      "min": 0.06725367158651352,
+      "max": 0.24253880977630615
+    },
+    "rms_w_bottom_mps": {
+      "mean": 0.00010321490435876739,
+      "std": 3.151758631753927e-05,
+      "min": 6.522801616012081e-05,
+      "max": 0.00019974095268639877
+    },
+    "rms_div_model_sinv": {
+      "mean": 6.882376824629604e-06,
+      "std": 2.278181402706965e-06,
+      "min": 4.433713698347285e-06,
+      "max": 1.2883559185869633e-05
+    },
+    "rms_wkin_model_mps": {
+      "mean": 0.018365293993251836,
+      "std": 0.002837839696566516,
+      "min": 0.014182748607608524,
+      "max": 0.0271058792413367
+    },
+    "rmse_wtheta_vs_wkin_model_mps": {
+      "mean": 0.0009062759903649661,
+      "std": 0.00031307334445628406,
+      "min": 0.0005248986317421554,
+      "max": 0.0017802647499202174
+    },
+    "rmse_wtheta_bc_vs_wkin_model_mps": {
+      "mean": 0.0008974794497654608,
+      "std": 0.0003137459516992699,
+      "min": 0.0005150662747230898,
+      "max": 0.001793932549028497
+    },
+    "relL2_wtheta_bc_vs_wkin_model": {
+      "mean": 0.04819691150040767,
+      "std": 0.012050101377747799,
+      "min": 0.030016923905935026,
+      "max": 0.08601377064765403
+    },
+    "corr_wtheta_bc_vs_wkin_model": {
+      "mean": 0.9985791766679046,
+      "std": 0.0007456368232076796,
+      "min": 0.995677842878715,
+      "max": 0.9994554052699457
+    },
+    "rms_wkin_obs_increment_mps": {
+      "mean": 0.01938279942531398,
+      "std": 0.00315286801876574,
+      "min": 0.01545642428105821,
+      "max": 0.029543826759885917
+    },
+    "rmse_wtheta_increment_vs_wkin_obs_mps": {
+      "mean": 0.005819855060066337,
+      "std": 0.0014726169872137191,
+      "min": 0.003486497890607053,
+      "max": 0.010446042486720434
+    },
+    "relL2_wtheta_increment_vs_wkin_obs": {
+      "mean": 0.2986766454994296,
+      "std": 0.047321618036704594,
+      "min": 0.20542982551233124,
+      "max": 0.43386146355410843
+    },
+    "corr_wtheta_increment_vs_wkin_obs": {
+      "mean": 0.946042525303258,
+      "std": 0.017408317292315085,
+      "min": 0.88942709082558,
+      "max": 0.9732371435639098
+    },
+    "rmse_wtheta_increment_vs_wkin_model_mps": {
+      "mean": 0.000886556612817454,
+      "std": 0.0003120687684659729,
+      "min": 0.0005132556447076663,
+      "max": 0.001792458746078659
+    },
+    "corr_wtheta_increment_vs_wkin_model": {
+      "mean": 0.9985921338980777,
+      "std": 0.0007471539110314232,
+      "min": 0.995686644954858,
+      "max": 0.9994500482183541
+    }
+  }
+}

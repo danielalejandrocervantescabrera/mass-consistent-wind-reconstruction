@@ -1,0 +1,81 @@
+{
+  "experiment": "full reconstruction using all observed hourly snapshots, balanced REAL/PCHIP minibatches, time-dependent velocity scaling S(t), physical divergence scaling, and no Fourier features",
+  "coordinates": "storm-relative (xi,eta,z,t)",
+  "scientific_scope": "reconstruction, not forecasting; all available hourly u,v observations assimilated",
+  "seed": 1234,
+  "architecture": {
+    "width": 80,
+    "depth": 5,
+    "n_parameters": 65443,
+    "fourier_features": false
+  },
+  "sampling": {
+    "generated_times": 721,
+    "real_hourly_times": 61,
+    "interpolated_times": 660,
+    "points_per_time": 24000,
+    "data_batch_size": 512,
+    "real_batch_size": 256,
+    "interp_batch_size": 256,
+    "real_fraction": 0.5,
+    "alpha_interp": 0.5
+  },
+  "scaling": {
+    "definition": "S_k=max(max|u_k|,max|v_k|) on all processed observed hourly anchors; log-PCHIP in time",
+    "S_global_storage_mps": 43.044312216722524,
+    "S_real_min_mps": 22.691085815429688,
+    "S_real_mean_mps": 30.36196965076884,
+    "S_real_max_mps": 44.17360305786133,
+    "S_dense_min_mps": 22.691085815429684,
+    "S_dense_max_mps": 44.17360305786133,
+    "Lxi_m": 426901.8126132473,
+    "Leta_m": 444779.6076147499,
+    "Lz_m": 290.0,
+    "Lh_m": 435749.03408286016,
+    "div_coeff_x": 1.020724253700061,
+    "div_coeff_y": 0.9796965207548102,
+    "div_coeff_z": 1.0
+  },
+  "loss": {
+    "definition_uv": "J_real + alpha_interp * J_pchip on temporally normalized targets (u/S(t),v/S(t))",
+    "beta_div": 0.03,
+    "beta_bdy": 1.0
+  },
+  "training": {
+    "epochs": 2500,
+    "batches_per_epoch": 25,
+    "div_batch": 2048,
+    "bdy_batch": 1024,
+    "initial_lr": 0.01,
+    "weight_decay": 1e-06,
+    "step_size": 200,
+    "gamma": 0.5,
+    "checkpoint_selection": "none; fixed final epoch is reported",
+    "wall_time_seconds": 730.4262285199948,
+    "peak_gpu_memory_bytes": 87106560
+  },
+  "reported_checkpoint": "final epoch; fixed training budget; no temporal holdout selection",
+  "final_epoch": 2499,
+  "full_data_uv_metrics": {
+    "all": {
+      "relL2_uv": 0.059358289310279304,
+      "RMSE_uv_mps": 0.8024111500997365,
+      "mse_bar_uv": 0.0006821476696158139
+    },
+    "real": {
+      "relL2_uv": 0.0680463744588217,
+      "RMSE_uv_mps": 0.920348852035896,
+      "mse_bar_uv": 0.0008988240142989029
+    },
+    "interp": {
+      "relL2_uv": 0.058489165213150104,
+      "RMSE_uv_mps": 0.7906232024216125,
+      "mse_bar_uv": 0.0006621215226072254
+    }
+  },
+  "physics_metrics": {
+    "rms_div_phys_sinv": 7.507446638816281e-06,
+    "rms_bdy_phys_mps": 0.00011073248456062426,
+    "rms_w_phys_mps": 0.018437463617002638
+  }
+}

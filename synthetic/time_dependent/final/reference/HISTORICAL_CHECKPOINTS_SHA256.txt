@@ -1,0 +1,4 @@
+# SHA256 + relative file path for original three frozen checkpoints
+eb05695c1051d60c6e15eb6e8e5884ca9f9b938bcc3e7e9db76f1ee782f29d60  out_time_obs_sweep/checkpoints/timeobs_n16384_s0_best.pt
+7d3d822df074a8a55e0b3021a40adebc70d6103d60a1bcb03ff932d064b3f588  out_time_final_16384/checkpoints/timefinal16384_s1_best.pt
+8a483a483575dec88beb9773e639b5a9f80094b07554b500919895f64c00e1cb  out_time_final_16384/checkpoints/timefinal16384_s2_best.pt

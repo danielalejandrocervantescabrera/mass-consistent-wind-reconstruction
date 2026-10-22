@@ -1,0 +1,6 @@
+# Preserve original trained checkpoints and historical evaluation tables
+# located under out_time_final_16384/ and out_time_obs_sweep/.
+# New training/evaluation artifacts live under outputs/, ignored by root .gitignore.
+time_*_logs/
+__pycache__/
+*.pyc

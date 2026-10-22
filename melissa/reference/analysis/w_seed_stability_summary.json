@@ -1,0 +1,63 @@
+{
+  "purpose": "stability of reconstructed w across independent random initializations; this is not validation against true atmospheric w",
+  "seeds": [
+    1234,
+    2345,
+    3456
+  ],
+  "n_real_hourly_times": 61,
+  "grid_shape_nz_ny_nx": [
+    15,
+    40,
+    40
+  ],
+  "pairwise": {
+    "1234_2345": {
+      "correlation_by_time_mean": 0.9803654878996879,
+      "correlation_by_time_std": 0.009566422413181164,
+      "correlation_by_time_min": 0.9400553974316298,
+      "correlation_by_time_max": 0.9907808427756564,
+      "rmse_by_time_mps_mean": 0.0033863254600416536,
+      "rmse_by_time_mps_std": 0.0009310101630646177,
+      "relative_rmse_by_time_mean": 0.18077532620355424,
+      "relative_rmse_by_time_std": 0.03873508218907927,
+      "global_correlation": 0.9802658564983898,
+      "global_rmse_mps": 0.0035099530677930066
+    },
+    "1234_3456": {
+      "correlation_by_time_mean": 0.9761729124244369,
+      "correlation_by_time_std": 0.010621439642481236,
+      "correlation_by_time_min": 0.9330555032271124,
+      "correlation_by_time_max": 0.990669796568058,
+      "rmse_by_time_mps_mean": 0.003772410564935694,
+      "rmse_by_time_mps_std": 0.0010838007422488449,
+      "relative_rmse_by_time_mean": 0.20038331291109945,
+      "relative_rmse_by_time_std": 0.04218237379811232,
+      "global_correlation": 0.9757229934932614,
+      "global_rmse_mps": 0.00392255648619474
+    },
+    "2345_3456": {
+      "correlation_by_time_mean": 0.9880368202644639,
+      "correlation_by_time_std": 0.004155849094971579,
+      "correlation_by_time_min": 0.9762644907381925,
+      "correlation_by_time_max": 0.9939815608846806,
+      "rmse_by_time_mps_mean": 0.002711442326014476,
+      "rmse_by_time_mps_std": 0.0007486998038189893,
+      "relative_rmse_by_time_mean": 0.14134740578140087,
+      "relative_rmse_by_time_std": 0.02523065014232699,
+      "global_correlation": 0.9875296604725591,
+      "global_rmse_mps": 0.002811277559471838
+    }
+  },
+  "ensemble": {
+    "rms_ensemble_mean_w_mps": 0.018923177268567286,
+    "mean_pointwise_std_w_mps": 0.0016259890981018543,
+    "rms_pointwise_std_w_mps": 0.002436168488781987,
+    "relative_rms_spread": 0.12873992851235572
+  },
+  "peak_intensity_snapshot": {
+    "index": 46,
+    "key": "20251028T07",
+    "S_mps": 44.17360305786133
+  }
+}

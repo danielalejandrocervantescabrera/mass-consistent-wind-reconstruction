@@ -1,0 +1,20 @@
+{
+  "scope": "Original Melissa 2025 observed-hour spatiotemporal reconstruction, final 2500 epochs",
+  "seeds": [
+    1234,
+    2345,
+    3456
+  ],
+  "checkpoint_hashes_sha256": {
+    "reference/checkpoints/seed_1234/final_model.pt": "eb6d314b831b586cb52934a81699ddb0526784c5ebaf1b461de32d8ff81fc768",
+    "reference/checkpoints/seed_2345/final_model.pt": "c25cdfd0881570090d8e39a306936171003e331da235ca5093d279bbe3ae2d42",
+    "reference/checkpoints/seed_3456/final_model.pt": "eea77aede53cb6fd466f0704e1ae716ff27929cc18d00ed0d02dfba43fe11c0f"
+  },
+  "source": "User-supplied melissa_modelos_finales.tar.gz",
+  "verification": "strict state_dict load and reference-summary agreement; physics diagnostics must be recomputed from processed data",
+  "important_limits": [
+    "all 61 observed hours assimilated, no temporal holdout",
+    "PCHIP times are interpolation, not independent observations",
+    "no independent measurement of vertical wind"
+  ]
+}
