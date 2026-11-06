@@ -171,3 +171,54 @@ An alternative three-dimensional visualization is available
 through the Python script:
 
     melissa/src/make_melissa_fidelity_ribbons_split.py
+
+## Regenerating the training arrays
+
+The original 61 hourly NASA POWER files are available in
+`data/raw/`, together with `hourly_eye_centers.csv`.
+
+The preprocessing script generates the arrays required
+for training the neural networks.
+
+From the `melissa/` directory, run:
+
+    python3 src/prepare_melissa_hourly.py \
+        --input_dir data/raw \
+        --centers data/raw/hourly_eye_centers.csv \
+        --outdir data/processed/rebuild_check \
+        --nx 40 \
+        --ny 40 \
+        --dz 20 \
+        --dt_minutes 5 \
+        --wahba_lambda 0.001 \
+        --holdout_gap_minutes 0 \
+        --max_height 290
+
+The parameters correspond to the archived preprocessing
+manifest.
+
+The generated files include:
+
+- train_X.npy
+- train_Yuv.npy
+- train_times.csv
+- eye_path.npz
+- train_hourly_processed.npz
+- manifest.json
+
+The generated training arrays contain approximately
+17.3 million space-time records and require several
+hundred megabytes of storage.
+
+These large intermediate arrays are not tracked in Git.
+
+The original meteorological data, processing scripts,
+validation-selected checkpoints and numerical summaries
+are archived in the repository.
+
+The preprocessing command is documented for reproducibility,
+but regeneration from a clean clone has not been
+independently verified.
+
+MATLAB is optional and is not required for training,
+model evaluation or the Python visualizations.
