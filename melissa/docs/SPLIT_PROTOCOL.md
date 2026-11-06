@@ -146,3 +146,28 @@ configuration, and a compatible Python environment.
 
 Results may vary when new NASA POWER data are
 retrieved rather than using the archived input files.
+
+## 8. Optional MATLAB visualization
+
+The three-dimensional streamribbon visualization was generated
+using MATLAB.
+
+The source code is provided in:
+
+    melissa/src/ribbon_melissa_split_2345.m
+
+The corresponding publication figures are archived as PDF
+and PNG files in:
+
+    melissa/outputs/split_protocol/figures/revised_2345/
+
+Running the MATLAB script requires a compatible MATLAB
+installation and license.
+
+MATLAB is not required for training, evaluating the neural
+models, or reproducing the quantitative results.
+
+An alternative three-dimensional visualization is available
+through the Python script:
+
+    melissa/src/make_melissa_fidelity_ribbons_split.py
