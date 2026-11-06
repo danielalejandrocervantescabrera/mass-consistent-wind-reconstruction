@@ -1,29 +1,23 @@
-
-## Hurricane Melissa: current manuscript protocol
-
-The manuscript reports a time-stratified 70/15/15
-train/validation/test protocol on processed NASA POWER
-horizontal-wind fields, evaluated across three
-independent network seeds.
-
-The mean held-out horizontal relative error is
-**6.48 +/- 1.93%**.
-
-The unobserved vertical component is assessed through
-inter-seed stability and continuity-based diagnostics.
-
-See [Melissa split protocol](melissa/docs/SPLIT_PROTOCOL.md)
-for experimental details, checkpoints, and limitations.
-
----
-
 # Mass-Consistent Wind Field Reconstruction
 
 **Reproducibility materials accompanying a research manuscript (under review).**
 
 This repository implements *reconstruction* of three-dimensional wind fields, including a vertical velocity component that is **not directly observed**. The model fits observed horizontal components `(u, v)` while penalizing spatial mass-continuity residuals and the lower-boundary condition on `w`. **It is not a weather-forecasting system.**
 
-Two time-dependent reconstruction experiments are included: a moving synthetic vortex with known ground truth, and the October 26–28, 2025 Hurricane Melissa case. The hurricane workflow extends the time-dependent synthetic formulation by adding a time coordinate to the reconstruction and enforcing spatial divergence at fixed time.
+The repository includes a time-dependent synthetic vortex with an analytical reference field and an application of the same space–time reconstruction formulation to Hurricane Melissa (October 26–28, 2025). In both experiments, time is an input coordinate and mass conservation is enforced through spatial divergence at fixed time; no weather forecasting is performed.
+
+<p align="center">
+  <img src="docs/images/melissa_streamribbons_seed2345.png"
+       alt="Three-dimensional reconstructed streamribbons for Hurricane Melissa"
+       width="680">
+</p>
+
+<p align="center"><sub>
+  Hurricane Melissa, 28 October 2025 at 07:00 UTC (seed 2345).
+  Instantaneous streamribbons of the reconstructed wind field, colored by horizontal
+  wind speed. The vertical component is inferred from physical constraints, not
+  directly observed. Vertical distances are exaggerated by a factor of 500 for visualization.
+</sub></p>
 
 ## Contents
 
@@ -79,6 +73,22 @@ The 61 hourly source fields are preprocessed to 721 five-minute instants (40 × 
 | Melissa in-sample hourly horizontal RMSE `(u,v)` | `0.78147 ± 0.15135 m/s` |
 
 For the hurricane, the mean observed-hour horizontal errors above were independently recomputed from the archived weights and the processed input fields; their numerical agreement with the historical training summaries was confirmed. The synthetic independent evaluation was also rerun from the archived weights. Details of what is independently tested versus reused from training are in [the reproducibility guide](docs/REPRODUCIBILITY.md).
+
+## Hurricane Melissa: current reconstruction results
+
+The manuscript reports a time-stratified 70/15/15
+train/validation/test protocol on processed NASA POWER
+horizontal-wind fields, evaluated across three
+independent network seeds.
+
+The mean held-out horizontal relative error is
+**6.48 +/- 1.93%**.
+
+The unobserved vertical component is assessed through
+inter-seed stability and continuity-based diagnostics.
+
+See [Melissa split protocol](melissa/docs/SPLIT_PROTOCOL.md)
+for experimental details, checkpoints, and limitations.
 
 ## Scientific scope and limitations
 
