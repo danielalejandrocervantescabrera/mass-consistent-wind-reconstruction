@@ -1,0 +1,37 @@
+{
+  "n_seeds": 3,
+  "metrics": {
+    "best_epoch": {
+      "mean": 2486.6666666666665,
+      "sample_std": 23.09401076758503
+    },
+    "test_relL2_uv_pct": {
+      "mean": 6.479328858317917,
+      "sample_std": 1.9338541113672325
+    },
+    "test_RMSE_uv_mps": {
+      "mean": 0.876135688084103,
+      "sample_std": 0.2614960036087534
+    },
+    "test_MSEuv_normalized_per_component": {
+      "mean": 0.000797367166876793,
+      "sample_std": 0.0004293587152571529
+    },
+    "test_RMS_div_sinv": {
+      "mean": 5.390519781403445e-06,
+      "sample_std": 1.2521459274462994e-06
+    },
+    "test_RMS_bottom_w_mps": {
+      "mean": 9.293692389141576e-05,
+      "sample_std": 2.0993193384486708e-05
+    },
+    "test_RMS_interior_w_mps": {
+      "mean": 0.0177970770010883,
+      "sample_std": 0.000706228781724959
+    },
+    "train_seconds": {
+      "mean": 698.1003997486745,
+      "sample_std": 0.979880828844726
+    }
+  }
+}

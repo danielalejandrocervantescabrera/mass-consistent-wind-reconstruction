@@ -1,0 +1,89 @@
+{
+  "protocol": "processed-space-time holdout, NOT original-hour holdout",
+  "scope": "inverse reconstruction of w under continuity and bottom boundary; not forecasting",
+  "processed_reference_is_built_from_all_original_hours": true,
+  "no_independent_meteorological_test_or_w_truth": true,
+  "split": {
+    "method": "time-stratified affine-bijection of dense grid rows",
+    "split_seed": 260926,
+    "times": 721,
+    "points_per_time": 24000,
+    "rows_total": 17304000,
+    "per_time": {
+      "train": 16800,
+      "val": 3600,
+      "test": 3600
+    },
+    "counts": {
+      "train": 12112800,
+      "val": 2595600,
+      "test": 2595600
+    },
+    "per_time_affine_parameters_sha256": "280e2d07d41ba88eeecf5002fa4f4b246eeee6bab73e97289e42fc4abf1753b8",
+    "all_partitions_span_all_time_levels": true,
+    "holdout_unit": "processed space-time grid row, not original POWER hour",
+    "meteorological_independence": false
+  },
+  "seeds": {
+    "network_and_collocation": 3456,
+    "partition": 260926,
+    "validation_sampling": 260927,
+    "test_sampling": 260928,
+    "physics_test_sampling": 260929
+  },
+  "architecture": {
+    "width": 80,
+    "depth": 5,
+    "n_parameters": 65443
+  },
+  "normalization": {
+    "target": "u/S(t), v/S(t)",
+    "S_t": "PCHIP(log S_k) computed from preprocessed original hourly snapshots",
+    "physical_divergence": "S(t)/Lh * r_div",
+    "Lxi_m": 426901.8126132473,
+    "Leta_m": 444779.6076147499,
+    "Lz_m": 290.0,
+    "Lh_m": 435749.03408286016
+  },
+  "loss": {
+    "uv": "mean[(u_bar-u_ref_bar)^2+(v_bar-v_ref_bar)^2] on TRAIN split only",
+    "beta_div": 0.03,
+    "beta_bdy": 1.0
+  },
+  "training": {
+    "epochs_budget": 2500,
+    "batches_per_epoch": 25,
+    "data_batch": 512,
+    "div_batch": 2048,
+    "boundary_batch": 1024,
+    "initial_lr": 0.01,
+    "step_size": 200,
+    "gamma": 0.5,
+    "weight_decay": 1e-06,
+    "checkpoint_selection": "minimum horizontal validation MSE",
+    "best_epoch": 2500,
+    "seconds": 696.979810505989,
+    "max_gpu_allocated_bytes": 81041920
+  },
+  "validation": {
+    "sample_size": 24000,
+    "best_mse_bar_pair": 0.0013525232076644898
+  },
+  "test": {
+    "sample_size": 100000,
+    "relL2_uv": 0.060728238063011565,
+    "RMSE_uv_mps": 0.8211680222584746,
+    "mse_bar_uv": 0.0006843317258358001,
+    "mse_bar_pair": 0.0013686634516716003
+  },
+  "test_physics": {
+    "n_interior": 8192,
+    "n_boundary": 8192,
+    "rms_div_dimless": 0.07033414393663406,
+    "rms_div_phys_sinv": 5.155563039382527e-06,
+    "rms_bdy_bar": 0.004122543148696423,
+    "rms_bdy_phys_mps": 8.826936786687747e-05,
+    "rms_w_phys_mps": 0.018020584255947037
+  },
+  "model_file": "best_model.pt"
+}

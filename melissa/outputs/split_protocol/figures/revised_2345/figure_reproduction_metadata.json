@@ -1,0 +1,25 @@
+{
+  "source": "validation-selected processed-space-time split checkpoint",
+  "checkpoint": "outputs/split_protocol/models/seed_2345/best_model.pt",
+  "checkpoint_sha256": "5652c4a050fdc8fa21b960adedca36c6d865a462594770749dec7bb2ebd1c50b",
+  "seed": 2345,
+  "epoch": 2500,
+  "snapshot_key": "20251028T07",
+  "hour_from_start": 46.0,
+  "time_normalized": 0.7666666666666667,
+  "S_t_mps": 44.17360305786133,
+  "vertical_scale_Sw_mps": 0.02939844700687007,
+  "grid": {
+    "xi_n": 40,
+    "eta_n": 40,
+    "z_n": 15
+  },
+  "height_m": 10.0,
+  "snapshot_horizontal_relL2": 0.08554454314870553,
+  "snapshot_horizontal_RMSE_mps": 1.4736687811530784,
+  "snapshot_horizontal_vector_error_max_mps": 4.781082188220832,
+  "ribbons_displayed": 18,
+  "vertical_display_factor": 500.0,
+  "streamline_integration": "RK4 in physical (xi,eta,z) meters; no z exaggeration",
+  "ribbon_width_km_illustrative": 5.5
+}

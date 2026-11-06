@@ -1,3 +1,22 @@
+
+## Hurricane Melissa: current manuscript protocol
+
+The manuscript reports a time-stratified 70/15/15
+train/validation/test protocol on processed NASA POWER
+horizontal-wind fields, evaluated across three
+independent network seeds.
+
+The mean held-out horizontal relative error is
+**6.48 +/- 1.93%**.
+
+The unobserved vertical component is assessed through
+inter-seed stability and continuity-based diagnostics.
+
+See [Melissa split protocol](melissa/docs/SPLIT_PROTOCOL.md)
+for experimental details, checkpoints, and limitations.
+
+---
+
 # Mass-Consistent Wind Field Reconstruction
 
 **Reproducibility materials accompanying a research manuscript (under review).**
@@ -18,7 +37,7 @@ Two time-dependent reconstruction experiments are included: a moving synthetic v
 | `melissa/scripts/` | Data processing, evaluation, independent horizontal-fit recomputation and figures. |
 | `docs/` | Reproduction instructions, provenance limitations and publication checklist. |
 
-The trained checkpoints are small enough to be tracked directly in Git. New derived data under `outputs/` and `melissa/data/processed/` are intentionally ignored to keep this repository manageable.
+The trained checkpoints are small enough to be tracked directly in Git. Derived data under `outputs/` and `melissa/data/processed/` are normally ignored. The processed reference, checkpoints, and results associated with the validation-selected 70/15/15 protocol are explicitly tracked in Git.
 
 ## Quick start on Linux / Ubuntu
 
@@ -39,7 +58,7 @@ bash synthetic/time_dependent/final/scripts/04_figures.sh
 
 The frozen models reproduce the **50,000-point independent synthetic evaluation**. The time-dependent synthetic benchmark has an analytic reference solution for all `(u,v,w)` components.
 
-### Hurricane Melissa (no retraining)
+### Hurricane Melissa: historical in-sample experiment (no retraining)
 
 ```bash
 bash melissa/scripts/06_verify_history.sh
